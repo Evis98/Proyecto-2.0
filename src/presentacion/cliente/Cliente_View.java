@@ -7,19 +7,20 @@ package presentacion.cliente;
 
 
 import java.util.Observable;
+import java.util.Observer;
 import logica.Cliente;
 import presentacion.Cliente_TableModel;
 /**
  *
  * @author Eva
  */
-public class Cliente_View extends javax.swing.JDialog implements java.util.Observer {
+public class Cliente_View extends javax.swing.JInternalFrame implements Observer {
 
     /**
      * Creates new form View
      */
-    public Cliente_View(java.awt.Frame parent, boolean modal) {
-        super(parent,modal);
+    public Cliente_View() {
+        
         initComponents();
         this.setLocation(100, 100);
         this.getContentPane().setBackground(new java.awt.Color(204, 255, 204));
@@ -54,6 +55,9 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
         jTable_Cliente = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jTextField_buscar = new javax.swing.JTextField();
+        buscarjButton = new javax.swing.JButton();
+
+        setClosable(true);
 
         jLabel1.setFont(new java.awt.Font("Rockwell", 3, 36)); // NOI18N
         jLabel1.setText("Registrar un Cliente");
@@ -88,6 +92,9 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
         Button_Agregar_Cliente.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Button_Agregar_Cliente.setText("Agregar");
         Button_Agregar_Cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_Agregar_ClienteMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 Button_Agregar_ClienteMousePressed(evt);
             }
@@ -104,10 +111,22 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable_Cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable_ClienteMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable_Cliente);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 16)); // NOI18N
         jLabel2.setText("Buscar por identificación: ");
+
+        buscarjButton.setText("Buscar");
+        buscarjButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buscarjButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,9 +135,9 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(35, 35, 35)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addGap(48, 48, 48)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -164,11 +183,17 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(buscarjButton)
+                .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(14, 14, 14)
+                .addComponent(buscarjButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,38 +239,40 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {                                        
-      if(jTextField_Id.getText().isEmpty() || jTextField_Nombre.getText().isEmpty() || jTextField_Provincia.getText().isEmpty() ) return;
-       Cliente cliente = new Cliente();
-       cliente.setId(jTextField_Id.getText());
-       cliente.setNombre(jTextField_Nombre.getText());
-       cliente.setProvincia(jTextField_Nombre.getText());
-    
-       //producto.setPrecio_unitario(Textfield_Precio.getText());                                                                            //
-       control.agregar(cliente);
-    }                                       
-
-    private void filtroBuscarActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        Cliente filtro= new Cliente();
-        filtro.setId(jTextField_Id.getText());
-        filtro.setNombre(jTextField_Nombre.getText());
-        filtro.setProvincia(jTextField_Provincia.getText());
-        control.buscar(filtro);
-    }                                            
-    
-    private void listaMouseClicked(java.awt.event.MouseEvent evt) {                                   
-        if(evt.getClickCount()==3){
-           control.seleccionar(jTable_Cliente.getSelectedRow());
-        }
-    }
     private void Button_Agregar_ClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Agregar_ClienteMousePressed
-        
-// TODO add your handling code here:
+
     }//GEN-LAST:event_Button_Agregar_ClienteMousePressed
 
     private void jTextField_IdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_IdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_IdActionPerformed
+
+    private void buscarjButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarjButtonMouseClicked
+    Cliente filtro = new Cliente();
+        filtro.setId(jTextField_Id.getText());
+        filtro.setNombre(jTextField_Nombre.getText());
+        filtro.setProvincia(jTextField_Provincia.getText());
+        control.buscar(filtro);
+    }//GEN-LAST:event_buscarjButtonMouseClicked
+
+    private void jTable_ClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_ClienteMouseClicked
+        if (evt.getClickCount() == 3) {
+            control.seleccionar(jTable_Cliente.getSelectedRow());
+        }
+    }//GEN-LAST:event_jTable_ClienteMouseClicked
+
+    private void Button_Agregar_ClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_Agregar_ClienteMouseClicked
+        if (jTextField_Id.getText().isEmpty() || jTextField_Nombre.getText().isEmpty() || jTextField_Provincia.getText().isEmpty()) {
+            return;
+        }
+        Cliente cliente = new Cliente();
+        cliente.setId(jTextField_Id.getText());
+        cliente.setNombre(jTextField_Nombre.getText());
+        cliente.setProvincia(jTextField_Nombre.getText());
+
+        //producto.setPrecio_unitario(Textfield_Precio.getText());                                                                            //
+        control.agregar(cliente);
+    }//GEN-LAST:event_Button_Agregar_ClienteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -275,11 +302,11 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
         //</editor-fold>
 
         /* Create and display the form */
-       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Agregar_Cliente;
+    private javax.swing.JButton buscarjButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel_Canton;
@@ -303,16 +330,16 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
 
     Cliente_Control control;
     Cliente_Modelo modelo;
-    
-    public void setControl(Cliente_Control control){
-        this.control =control;
+
+    public void setControl(Cliente_Control control) {
+        this.control = control;
     }
 
     public Cliente_Control getControl() {
         return control;
     }
-    
-    public void setModelo(Cliente_Modelo modelo){
+
+    public void setModelo(Cliente_Modelo modelo) {
         this.modelo = modelo;
         modelo.addObserver(this);
 
@@ -324,7 +351,16 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
 
     @Override
     public void update(Observable o, Object arg) {
+        Cliente current = modelo.getCurrent();
+        jTextField_Nombre.setText(current.getNombre());
+        jTextField_Id.setText(current.getId());
+        jTextField_Numero.setText(current.getTelefono());
+        jTextField_Correo.setText(current.getCorreo());
+        jTextField_Provincia.setText(current.getProvincia());
+        jTextField_Canton.setText(current.getCanton());        
+        jTextField_Distrito.setText(current.getDistrito());
         
-      }
+       // jTable_Cliente.setModel(new Cliente_TableModel(modelo.getLista()));
+    }
 
 }
