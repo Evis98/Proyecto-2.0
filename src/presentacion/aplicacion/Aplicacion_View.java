@@ -15,6 +15,7 @@ public class Aplicacion_View extends javax.swing.JFrame implements java.util.Obs
      */
     public Aplicacion_View() {
         initComponents();
+        
         this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
@@ -28,8 +29,33 @@ public class Aplicacion_View extends javax.swing.JFrame implements java.util.Obs
     private void initComponents() {
 
         Eleccion = new javax.swing.ButtonGroup();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu_Producto = new javax.swing.JMenu();
+        jMenu_Cliente = new javax.swing.JMenu();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
+
+        jMenu1.setText("File");
+        jMenuBar2.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar2.add(jMenu2);
+
+        jMenu3.setText("File");
+        jMenuBar3.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar3.add(jMenu4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,6 +67,15 @@ public class Aplicacion_View extends javax.swing.JFrame implements java.util.Obs
             }
         });
         jMenuBar1.add(jMenu_Producto);
+
+        jMenu_Cliente.setText("Cliente");
+        Eleccion.add(jMenu_Cliente);
+        jMenu_Cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu_ClienteMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu_Cliente);
 
         setJMenuBar(jMenuBar1);
 
@@ -62,10 +97,23 @@ public class Aplicacion_View extends javax.swing.JFrame implements java.util.Obs
         this.control.productoShow();
     }//GEN-LAST:event_jMenu_ProductoMouseClicked
 
+    private void jMenu_ClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_ClienteMouseClicked
+       this.control.clienteShow();
+    }//GEN-LAST:event_jMenu_ClienteMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Eleccion;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenu jMenu_Cliente;
     private javax.swing.JMenu jMenu_Producto;
     // End of variables declaration//GEN-END:variables
 

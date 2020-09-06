@@ -7,14 +7,17 @@ package Datos;
 
 import java.util.ArrayList;
 import java.util.List;
+import logica.Cliente;
 import logica.Producto;
+
 
 /**
  *
  * @author Ivan
  */
 public class Datos {
-    List<Producto> productos;    
+    List<Producto> productos;   
+    List<Cliente> clientes;
 
     public Datos() {
         productos = new ArrayList<>();        
@@ -24,7 +27,11 @@ public class Datos {
         return productos;
     }
 
-    public void setClientes(List<Producto> productos) {
+    public List<Cliente> getClientes(){
+        return clientes;
+    }
+    public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }
+    
 }

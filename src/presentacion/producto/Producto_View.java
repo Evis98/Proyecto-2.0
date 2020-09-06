@@ -19,7 +19,7 @@ public class Producto_View extends javax.swing.JDialog implements java.util.Obse
      */
     public Producto_View(java.awt.Frame parent, boolean modal) {
         super(parent,modal);
-        initComponents();
+       initComponents();
         this.setLocation(100, 100);
         this.getContentPane().setBackground(new java.awt.Color(204, 255, 204));
     }

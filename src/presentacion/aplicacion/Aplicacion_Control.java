@@ -19,19 +19,36 @@ public class Aplicacion_Control {
         view.setControl(this);
         
         initOptions();
+        initOptionsCliente();
     }
+   
 
     presentacion.producto.Producto_Modelo producto_Modelo;
     presentacion.producto.Producto_View producto_View;
     presentacion.producto.Producto_Control producto_Control;
     
+     presentacion.cliente.Cliente_Modelo cliente_Modelo;
+    presentacion.cliente.Cliente_View cliente_View;
+    presentacion.cliente.Cliente_Control cliente_Control;
+    
     public void initOptions() {
         producto_Modelo =  new presentacion.producto.Producto_Modelo();
         producto_View = new presentacion.producto.Producto_View(this.view,true);
         producto_Control = new presentacion.producto.Producto_Control(producto_Modelo,producto_View);      
+//      
+    
     }
-
+    
+     public void initOptionsCliente() {
+         cliente_Modelo = new presentacion.cliente.Cliente_Modelo();
+         cliente_View = new presentacion.cliente.Cliente_View(this.view,true);
+         cliente_Control = new presentacion.cliente.Cliente_Control(cliente_Modelo, cliente_View);
+            
+    }
     public void productoShow() {
         this.producto_Control.show();
+    }
+    public void clienteShow() {
+        this.cliente_Control.show();
     }
 }

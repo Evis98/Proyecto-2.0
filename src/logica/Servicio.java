@@ -31,14 +31,26 @@ public class Servicio {
     public List<Producto> getProductos() {
         return datos.getProductos();
     }
+     public List<Cliente> getClientes() {
+        return datos.getClientes();
+    }
 
     public void add(Producto o){
         datos.getProductos().add(o);
     }
+    
+     public void add(Cliente c){
+        datos.getClientes().add(c);
+    } 
 
     public List<Producto> buscar(Producto pro){
         List<Producto> result = new ArrayList<>();
         for(Producto p:datos.getProductos()) {if (p.getDetalle().contains(pro.getDetalle())) result.add(p);};
+        return result;
+    } 
+    public List<Cliente> buscar(Cliente cli){
+        List<Cliente> result = new ArrayList<>();
+        for(Cliente c:datos.getClientes()) {if (c.getId().contains(cli.getId())) result.add(c);};
         return result;
     } 
 }
