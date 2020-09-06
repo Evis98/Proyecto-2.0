@@ -55,8 +55,6 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
         jLabel2 = new javax.swing.JLabel();
         jTextField_buscar = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel1.setFont(new java.awt.Font("Rockwell", 3, 36)); // NOI18N
         jLabel1.setText("Registrar un Cliente");
 
@@ -326,7 +324,7 @@ public class Cliente_View extends javax.swing.JDialog implements java.util.Obser
 
     @Override
     public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        
+      }
 
 }
