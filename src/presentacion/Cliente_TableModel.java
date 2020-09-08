@@ -16,7 +16,7 @@ import javax.swing.table.TableModel;
  */
 public class Cliente_TableModel extends AbstractTableModel implements TableModel {
 
-    String[] cols = {"nombre", "id", "correo", "provincia", "canton", "distrito", "telefono"};               //
+    String[] cols = {"Nombre", "Id", "Correo", "Provincia", "Canton", "Distrito", "Telefono"};               //
     List<Cliente> rows;
 
     public Cliente_TableModel(List<Cliente> rows) {
@@ -37,15 +37,17 @@ public class Cliente_TableModel extends AbstractTableModel implements TableModel
     public int getRowCount() {
         return rows.size();
     }
-
-    public Object getValueAt(int row, int col) {
-        Cliente c = rows.get(row);
-        java.text.DecimalFormat df = new java.text.DecimalFormat("####");
+    
+    
+    @Override
+    public Object getValueAt(int rowc, int col) {
+        Cliente c = rows.get(rowc);
+        java.text.DecimalFormat dc = new java.text.DecimalFormat("####");
         switch (col) {
             case 0:
-                return c.getId();
-            case 1:
                 return c.getNombre();
+            case 1:
+                return c.getId();
             case 2:
                 return c.getCorreo();
             case 3:
@@ -62,7 +64,3 @@ public class Cliente_TableModel extends AbstractTableModel implements TableModel
         }
     }    
 }
-/**
- *
- * @author Ivan
- */

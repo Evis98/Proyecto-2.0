@@ -20,7 +20,8 @@ public class Datos {
     List<Cliente> clientes;
 
     public Datos() {
-        productos = new ArrayList<>();        
+        productos = new ArrayList<>();     
+        clientes = new ArrayList<>();
     }
 
     public List<Producto> getProductos() {
@@ -32,6 +33,9 @@ public class Datos {
     }
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
+    }
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes =clientes;
     }
     
 }

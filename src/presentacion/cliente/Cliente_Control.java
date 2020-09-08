@@ -28,7 +28,7 @@ public class Cliente_Control {
         modelo.setCurrent(new Cliente());
         modelo.setLista(logica.Servicio.instance().getClientes());        
         modelo.commit();
-    }
+    } 
     
     public void buscar(Cliente c){    
         modelo.setLista(logica.Servicio.instance().buscar(c));
