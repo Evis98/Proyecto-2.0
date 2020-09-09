@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class Servicio {
     private static Servicio theInstance;
+    
     public static Servicio instance(){
         if (theInstance==null){ 
             theInstance=new Servicio();
@@ -34,10 +35,19 @@ public class Servicio {
      public List<Cliente> getClientes() {
         return datos.getClientes();
     }
+     
+     public List<Empresa> getEmpresas() {
+        return datos.getEmpresas();
+    }
 
     public void add(Producto o){
         datos.getProductos().add(o);
     }
+    
+    public void add(Empresa o){
+        datos.getEmpresas().add(o);
+    }
+    
     
      public void add(Cliente c){
         datos.getClientes().add(c);
@@ -51,6 +61,12 @@ public class Servicio {
     public List<Cliente> buscar(Cliente cli){
         List<Cliente> result = new ArrayList<>();
         for(Cliente c:datos.getClientes()) {if (c.getId().contains(cli.getId())) result.add(c);};
+        return result;
+    } 
+    
+      public List<Empresa> buscar(Empresa emp){
+        List<Empresa> result = new ArrayList<>();
+        for(Empresa c:datos.getEmpresas()) {if (c.getId().contains(emp.getNombreComercial())) result.add(c);};
         return result;
     } 
 }

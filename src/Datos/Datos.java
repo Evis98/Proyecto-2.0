@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import logica.Cliente;
 import logica.Producto;
+import logica.Empresa;
 
 
 /**
@@ -18,12 +19,22 @@ import logica.Producto;
 public class Datos {
     List<Producto> productos;   
     List<Cliente> clientes;
+    List<Empresa> empresas;
 
     public Datos() {
         productos = new ArrayList<>();     
         clientes = new ArrayList<>();
+        empresas = new ArrayList<>();
     }
 
+    public List<Empresa> getEmpresas() {
+        return empresas;
+    }
+
+    public void setEmpresas(List<Empresa> empresas) {
+        this.empresas = empresas;
+    }
+    
     public List<Producto> getProductos() {
         return productos;
     }

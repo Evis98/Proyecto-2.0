@@ -45,6 +45,7 @@ public class Aplicacion_View extends javax.swing.JFrame implements java.util.Obs
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu_Producto = new javax.swing.JMenu();
         jMenu_Cliente = new javax.swing.JMenu();
+        jMenu_Empresa = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -94,6 +95,14 @@ public class Aplicacion_View extends javax.swing.JFrame implements java.util.Obs
         });
         jMenuBar1.add(jMenu_Cliente);
 
+        jMenu_Empresa.setText("Empresa");
+        jMenu_Empresa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu_EmpresaMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu_Empresa);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,6 +128,10 @@ public class Aplicacion_View extends javax.swing.JFrame implements java.util.Obs
        
     }//GEN-LAST:event_jMenu_ClienteMouseClicked
 
+    private void jMenu_EmpresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu_EmpresaMouseClicked
+        this.control.empresaShow();
+    }//GEN-LAST:event_jMenu_EmpresaMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Eleccion;
@@ -132,6 +145,7 @@ public class Aplicacion_View extends javax.swing.JFrame implements java.util.Obs
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu jMenu_Cliente;
+    private javax.swing.JMenu jMenu_Empresa;
     private javax.swing.JMenu jMenu_Producto;
     public javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables

@@ -3,22 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/producto/Producto_Control.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/producto/Producto_View.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/aplicacion/Aplicacion.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/logica/Empresa.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/aplicacion/Aplicacion_View.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/cliente/Cliente_View.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/Cliente_TableModel.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/logica/Producto.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/logica/Cliente.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/aplicacion/Aplicacion_Control.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/cliente/Cliente_Control.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/Producto_TableModel.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/cliente/Cliente_Modelo.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/Datos/Datos.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/logica/Servicio.java</file>
-            <file>file:/C:/Users/PC/Downloads/Proyecto%202.0/Proyecto%202.0/src/presentacion/producto/Producto_Modelo.java</file>
+            <file>file:/C:/Users/Daniel/Documents/GitHub/Proyecto-1/src/presentacion/cliente/Cliente_View.java</file>
+            <file>file:/C:/Users/Daniel/Documents/GitHub/Proyecto-1/src/logica/Servicio.java</file>
+            <file>file:/C:/Users/Daniel/Documents/GitHub/Proyecto-1/src/presentacion/empresa/Empresa_Control.java</file>
+            <file>file:/C:/Users/Daniel/Documents/GitHub/Proyecto-1/src/presentacion/empresa/Empresa_View.java</file>
         </group>
     </open-files>
 </project-private>
