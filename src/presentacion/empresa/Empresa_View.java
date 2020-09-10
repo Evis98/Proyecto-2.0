@@ -22,7 +22,7 @@ public class Empresa_View extends javax.swing.JInternalFrame implements Observer
     public Empresa_View() {
         initComponents();
         this.setLocation(100, 100);
-        this.getContentPane().setBackground(new java.awt.Color(204, 255, 204));
+
     }
 
     /**
